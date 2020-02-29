@@ -12,13 +12,20 @@ namespace _101_Entity_independent
         {
             using (var db = new UserContext())
             {
-                db.Users.Add(new User { Name = "Vahe", Company = "Google" });
-                db.Users.Add(new User { Name = "Gago", Company = "Microsoft" });
-                db.Users.Add(new User { Name = "Vardges", Company = "Sil" });
+                //db.Users.Add(new User { Name = "Vahe", Company = "Google" });
+                //db.Users.Add(new User { Name = "Gago", Company = "Microsoft" });
+                //db.Users.Add(new User { Name = "Vardges", Company = "Sil" });
                 db.Users.Add(new User { Name = "Davit", Company = "Google" });
                 db.Users.Add(new User { Name = "Aram", Company = "Google" });
 
                 db.SaveChanges();
+            }
+        }
+        static IEnumerable<User> Users (int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return new User { Name = $"A{i}", Company = $"A{i}-company" };
             }
         }
     }
