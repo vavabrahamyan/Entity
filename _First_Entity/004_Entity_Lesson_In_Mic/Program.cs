@@ -6,7 +6,7 @@ namespace _004_Entity_Lesson_In_Mic
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
